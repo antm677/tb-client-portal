@@ -16,7 +16,6 @@ import {
   CircleHelpIcon,
   CommandIcon,
   FlagIcon,
-  LayoutDashboardIcon,
   SearchIcon,
   Settings2Icon,
   UserIcon,
@@ -24,14 +23,6 @@ import {
 
 const data = {
   navMain: [
-    {
-      title: "Dashboard",
-      url: "/dashboard",
-      icon: (
-        <LayoutDashboardIcon
-        />
-      ),
-    },
     {
       title: "Challenges",
       url: "/dashboard/challenges",
