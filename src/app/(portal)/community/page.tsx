@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Fustat } from "next/font/google"
 import { Users } from "lucide-react"
+import type { SimpleIcon } from "simple-icons"
 import {
   siDiscord,
   siFacebook,
@@ -23,7 +24,15 @@ import { TopBanner } from "@/components/top-banner"
 
 const fustat = Fustat({ subsets: ["latin"], weight: ["600"] })
 
-const socialResources = [
+type SocialResource = {
+  title: string
+  description: string
+  href: string
+  icon: SimpleIcon
+  iconClassName?: string
+}
+
+const socialResources: SocialResource[] = [
   {
     title: "Facebook",
     description: "Community engagement",
@@ -67,7 +76,7 @@ const socialResources = [
     href: "https://www.youtube.com/@TradeApp354",
     icon: siYoutube,
   },
-] as const
+]
 
 export default function CommunityPage() {
   return (
