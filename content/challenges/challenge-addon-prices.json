@@ -1,0 +1,38 @@
+[
+  {
+    "balance": 5000,
+    "prices": {
+      "targetProfit": 19,
+      "dailyDrawdown": 24,
+      "profitShare": 29,
+      "challengeDuration": 34
+    }
+  },
+  {
+    "balance": 10000,
+    "prices": {
+      "targetProfit": 29,
+      "dailyDrawdown": 39,
+      "profitShare": 49,
+      "challengeDuration": 59
+    }
+  },
+  {
+    "balance": 25000,
+    "prices": {
+      "targetProfit": 49,
+      "dailyDrawdown": 69,
+      "profitShare": 89,
+      "challengeDuration": 99
+    }
+  },
+  {
+    "balance": 50000,
+    "prices": {
+      "targetProfit": 89,
+      "dailyDrawdown": 119,
+      "profitShare": 149,
+      "challengeDuration": 159
+    }
+  }
+]

@@ -1,9 +1,9 @@
 "use client"
 
 import * as React from "react"
+import { useTheme } from "next-themes"
 
 import { NavMain } from "@/components/nav-main"
-import { NavSecondary } from "@/components/nav-secondary"
 import {
   Sidebar,
   SidebarContent,
@@ -13,61 +13,101 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import {
+  BarChart3Icon,
   CircleHelpIcon,
-  CommandIcon,
-  FlagIcon,
-  SearchIcon,
-  Settings2Icon,
+  CreditCardIcon,
+  HeadsetIcon,
+  HomeIcon,
   UserIcon,
+  UsersIcon,
+  WalletCardsIcon,
 } from "lucide-react"
 
 const data = {
   navMain: [
     {
-      title: "Challenges",
-      url: "/dashboard/challenges",
+      title: "Home",
+      url: "/home",
       icon: (
-        <FlagIcon
+        <HomeIcon
+        />
+      ),
+    },
+    {
+      title: "My accounts",
+      url: "/my-accounts",
+      icon: (
+        <WalletCardsIcon
+        />
+      ),
+    },
+    // {
+    //   title: "Challenges",
+    //   url: "/challenges",
+    //   icon: (
+    //     <FlagIcon
+    //     />
+    //   ),
+    // },
+    {
+      title: "Leaderboard",
+      url: "/leaderboard",
+      icon: (
+        <BarChart3Icon
+        />
+      ),
+    },
+    {
+      title: "Community",
+      url: "/community",
+      icon: (
+        <UsersIcon
         />
       ),
     },
     {
       title: "Profile",
-      url: "/dashboard/profile",
+      url: "/profile",
       icon: (
         <UserIcon
         />
       ),
     },
-  ],
-  navSecondary: [
     {
-      title: "Settings",
-      url: "#",
+      title: "Billing",
+      url: "/billing",
       icon: (
-        <Settings2Icon
+        <CreditCardIcon
         />
       ),
     },
     {
-      title: "Get Help",
-      url: "#",
+      title: "FAQ",
+      url: "/faq",
       icon: (
         <CircleHelpIcon
         />
       ),
     },
     {
-      title: "Search",
-      url: "#",
+      title: "Support",
+      url: "/support",
       icon: (
-        <SearchIcon
+        <HeadsetIcon
         />
       ),
     },
   ],
 }
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { theme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+  const logoSrc = mounted && theme === "dark" ? "/trading_logo_dark.svg" : "/trading_logo.svg"
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
@@ -77,15 +117,22 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               className="data-[slot=sidebar-menu-button]:p-1.5!"
               render={<a href="#" />}
             >
-              <CommandIcon className="size-5!" />
-              <span className="text-base font-semibold">Acme Inc.</span>
+              <img
+                src={logoSrc}
+                alt="Trading logo"
+                className="h-10 w-auto group-data-[collapsible=icon]:hidden"
+              />
+              <img
+                src="/trading_logo_collapsed.svg"
+                alt="Trading logo"
+                className="hidden h-8 w-8 group-data-[collapsible=icon]:block"
+              />
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
     </Sidebar>
   )

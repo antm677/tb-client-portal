@@ -4,8 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Client Portal",
-  description: "Prop trading client portal",
+  title: "TradeApp",
+  description: "TradeApp client portal",
 };
 
 export default function RootLayout({

@@ -1,0 +1,90 @@
+{
+  "defaults": {
+    "selectedBalance": 10000,
+    "discountPercent": 10,
+    "bestChoiceBalance": 10000
+  },
+  "quiz": {
+    "text": "New to Prop Trading? Not sure what challenge fits you? We're here to help! Answer 5 simple questions and we'll tell you which one is best for you!",
+    "cta": "Start Quiz"
+  },
+  "sections": {
+    "challenge": {
+      "title": "Choose your challenge",
+      "subtitle": "Select one challenge and optional add-ons. All purchases are one time payments."
+    },
+    "addons": {
+      "title": "Select add-ons",
+      "subtitle": "Add-ons help you pass the challenge quicker.",
+      "bundlePrefix": "4 add-ons for"
+    },
+    "summary": {
+      "title": "Start your challenge",
+      "subtitle": "Verify challenge parameters"
+    }
+  },
+  "challengeCard": {
+    "balanceLabel": "Balance",
+    "paymentLabel": "One time payment",
+    "bestChoiceBadge": "10% off"
+  },
+  "objectives": {
+    "title": "1-Step Challenge",
+    "subtitle": "Single step to funded account",
+    "rows": [
+      { "label": "Target profit", "value": "10% or 8%", "showInfo": true },
+      { "label": "Daily drawdown", "value": "5% or 7%", "showInfo": true },
+      { "label": "Max drawdown", "value": "10%", "showInfo": true },
+      { "label": "Minimum trading days", "value": "4 days", "showInfo": true },
+      { "label": "Challenge duration", "value": "7 days or 60 days", "showInfo": true }
+    ],
+    "footer": {
+      "label": "Profit share on funded account",
+      "value": "80% or 90%",
+      "showInfo": true
+    },
+    "infoDialog": {
+      "ariaLabel": "More information",
+      "srTitle": "Challenge objectives details",
+      "srDescription": "Challenge objective details and explanations.",
+      "sections": [
+        {
+          "subtitle": "Target Profit",
+          "body": "Target Profit is the main objective for any challenge. For instance, if your initial balance is $10,000, you need to goal is to increase your equity to $11,0000 to pass the challenge. Here's when the Target profit add-on is helpful. With that add-on you only need to $10,800 of equity to pass the challenge."
+        },
+        {
+          "subtitle": "Daily Drawdown",
+          "body": "This is the risk constraint for the challenge. For example, if your equity on the beginning of the trading day is $10,000, your goal is to make sure it never reaches the $9,500. And the Daily Drawdown add-on can relax this requirement by allowing your equity to reach $9,300 without failing the challenge."
+        },
+        {
+          "subtitle": "Max Drawdown",
+          "body": "This is another risk constraint which represents the absolute minimum for your equity. For example, if your initial balance is $10,000, your goal is to make sure it never reaches $9,000."
+        },
+        {
+          "subtitle": "Minimum trading days",
+          "body": "Trade consistently and keep your risk within thresholds during at least 4 trading days to pass the challenge."
+        },
+        {
+          "subtitle": "Challenge duration",
+          "body": "This is the maximum number of calendar days (excluding weekends) during which the challenge goal (Target Profit) must be achieved. Now, we understand that 7 days maybe to few, so we offer an add-on that relaxes this requirement and gives you 60 days to complete the challenge."
+        },
+        {
+          "subtitle": "Profit share",
+          "body": "Once you pass the challenge, we'll be happy to fund you. You will be able to withdraw 80% of the profits you gain. And there's more to it... The Profit share add-on allows you to get 90% of generated profits."
+        }
+      ]
+    }
+  },
+  "summary": {
+    "challengePrefix": "Challenge",
+    "challengeType": "1-Step",
+    "accountCurrencyLabel": "Account currency",
+    "accountCurrencyValue": "USD",
+    "accountCurrencyFlagAlt": "USD flag",
+    "basePriceLabel": "Base price",
+    "addonBundleLabel": "Add-on bundle",
+    "specialDealLabel": "Special deal 10% off",
+    "totalLabel": "Total",
+    "checkoutCta": "Continue to payment"
+  }
+}

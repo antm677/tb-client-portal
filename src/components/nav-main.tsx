@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { Fustat } from "next/font/google"
 
 import {
   SidebarGroup,
@@ -10,7 +11,8 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
-import { CirclePlusIcon } from "lucide-react"
+
+const fustat = Fustat({ subsets: ["latin"], weight: ["600"] })
 
 export function NavMain({
   items,
@@ -31,25 +33,33 @@ export function NavMain({
 
   return (
     <SidebarGroup>
-      <SidebarGroupContent className="flex flex-col gap-2">
+      <SidebarGroupContent className="flex flex-col gap-3">
         <SidebarMenu>
-          <SidebarMenuItem className="flex items-center gap-2">
+          <SidebarMenuItem className="my-1.5 flex items-center gap-2">
             <SidebarMenuButton
-              tooltip="Start new challenge"
-              className="min-w-8 bg-primary text-primary-foreground duration-200 ease-linear hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground"
-              render={<Link href="/dashboard/challenges" />}
+              tooltip="New TradeApp Challenge"
+              className={`${fustat.className} min-w-8 h-11 justify-center gap-3 bg-[#FFA301] text-white text-base font-semibold duration-200 ease-linear hover:bg-[#e69500] hover:text-white active:bg-[#e69500] active:text-white`}
+              render={<Link href="/challenges" />}
               onClick={handleNavigation}
             >
-              <CirclePlusIcon
-              />
-              <span>Start new challenge</span>
+              <span className={`${fustat.className} font-semibold text-center group-data-[collapsible=icon]:hidden`}>
+                New Challenge
+              </span>
+              <span className="hidden text-xl leading-none font-semibold group-data-[collapsible=icon]:inline">
+                +
+              </span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
-        <SidebarMenu>
+        <SidebarMenu className="space-y-1">
           {items.map((item) => (
             <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton tooltip={item.title} render={<Link href={item.url} />} onClick={handleNavigation}>
+              <SidebarMenuButton
+                tooltip={item.title}
+                className={`${fustat.className} gap-3 text-base [&_svg]:size-5`}
+                render={<Link href={item.url} />}
+                onClick={handleNavigation}
+              >
                 {item.icon}
                 <span>{item.title}</span>
               </SidebarMenuButton>

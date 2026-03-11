@@ -1,0 +1,30 @@
+[
+  {
+    "id": "targetProfit",
+    "name": "Target profit",
+    "displayName": "Target profit: 8%",
+    "summaryLabel": "Target profit: 8%",
+    "effect": "Complete your challenge quicker"
+  },
+  {
+    "id": "dailyDrawdown",
+    "name": "Daily drawdown",
+    "displayName": "Daily drawdown: 7%",
+    "summaryLabel": "Daily drawdown: 7%",
+    "effect": "Increas your risk tolerance"
+  },
+  {
+    "id": "challengeDuration",
+    "name": "Challenge duration",
+    "displayName": "Challenge duration: 60 days",
+    "summaryLabel": "Challenge duration: 60 days",
+    "effect": "Trade with no rush"
+  },
+  {
+    "id": "profitShare",
+    "name": "Profit share",
+    "displayName": "Profit share: 90%",
+    "summaryLabel": "Profit share: 90%",
+    "effect": "Withdraw more profit"
+  }
+]

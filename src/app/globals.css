@@ -29,14 +29,14 @@
   --chart-3: oklch(0.596 0.1274 163.2254);
   --chart-4: oklch(0.5081 0.1049 165.6121);
   --chart-5: oklch(0.4318 0.0865 166.9128);
-  --sidebar: oklch(0.9514 0.025 236.8242);
-  --sidebar-foreground: oklch(0.3729 0.0306 259.7328);
-  --sidebar-primary: oklch(0.7227 0.192 149.5793);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.9505 0.0507 163.0508);
-  --sidebar-accent-foreground: oklch(0.3729 0.0306 259.7328);
-  --sidebar-border: oklch(0.9276 0.0058 264.5313);
-  --sidebar-ring: oklch(0.7227 0.192 149.5793);
+  --sidebar: #e3eaf2;
+  --sidebar-foreground: #1f2937;
+  --sidebar-primary: #0ca8c1;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #d7e0eb;
+  --sidebar-accent-foreground: #1f2937;
+  --sidebar-border: #c7d3df;
+  --sidebar-ring: #0ca8c1;
   --font-sans: "Avenir Next", sans-serif;
   --font-serif: Lora, serif;
   --font-mono: IBM Plex Mono, monospace;
@@ -88,7 +88,7 @@
   --chart-3: oklch(0.7227 0.192 149.5793);
   --chart-4: oklch(0.6959 0.1491 162.4796);
   --chart-5: oklch(0.596 0.1274 163.2254);
-  --sidebar: #0A232D;
+  --sidebar: var(--card);
   --sidebar-foreground: oklch(0.8717 0.0093 258.3382);
   --sidebar-primary: oklch(0.7729 0.1535 163.2231);
   --sidebar-primary-foreground: oklch(0.2077 0.0398 265.7549);
@@ -114,7 +114,7 @@
   --shadow-lg: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 4px 6px -2px hsl(0 0% 0% / 0.10);
   --shadow-xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 8px 10px -2px hsl(0 0% 0% / 0.10);
   --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
-  --challenge-cards-border: rgba(12, 168, 193, 0.7);
+  --challenge-cards-border: var(--border);
   --deal: #ffa301;
   --trade-gradient: linear-gradient(177deg, #75fbfd -68.62%, #3dd4e3 -16.3%, #15b8d0 45.4%, #009bb5 94.71%);
   --trade-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.04);
@@ -181,4 +181,36 @@
   body {
     @apply bg-white text-foreground font-sans;
   }
+}
+
+.scrollbar-transient {
+  scrollbar-width: none;
+}
+
+.scrollbar-transient::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.scrollbar-transient:is(:hover, :focus-within, :active) {
+  scrollbar-width: thin;
+}
+
+.scrollbar-transient:is(:hover, :focus-within, :active)::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-transient:is(:hover, :focus-within, :active)::-webkit-scrollbar-thumb {
+  background-color: color-mix(in oklab, var(--muted-foreground) 35%, transparent);
+  border-radius: 9999px;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
