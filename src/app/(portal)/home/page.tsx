@@ -33,7 +33,7 @@ const promotions = [
 
 export default function HomePage() {
   return (
-    <div className="space-y-6">
+    <div className="flex min-h-0 flex-1 flex-col space-y-6 overflow-y-auto">
       <TopBanner />
 
       <SectionTitle
